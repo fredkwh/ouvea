@@ -1,4 +1,6 @@
+
 import { useState } from "react";
+import clsx from "clsx";
 
 export default function CommandSite({ cart, setCart }) {
   const bowls = [
@@ -25,34 +27,63 @@ export default function CommandSite({ cart, setCart }) {
   ];
 
   const [selectedBowl, setSelectedBowl] = useState(null);
+  const [formatVisible, setFormatVisible] = useState(null);
+  const [selectedSizes, setSelectedSizes] = useState({});
 
-  const handleAddToCart = (bowl) => {
-    setCart((prevCart) => [...prevCart, bowl]);
+  const handleSizeSelect = (index, size) => {
+    const price = size === "Petit" ? 12.5 : 17.5;
+    const updatedSizes = { ...selectedSizes, [index]: size };
+    setSelectedSizes(updatedSizes);
+    setFormatVisible(null);
+    const bowl = bowls[index];
+    setCart((prev) => [...prev, { ...bowl, size, price, quantity: 1 }]);
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-8">Notre menu</h1>
-
-      <div className="grid grid-cols-2 gap-6 place-items-center">
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 place-items-center">
         {bowls.map((bowl, index) => (
           <div
             key={index}
-            className="w-[250px] h-[250px] bg-white border border-gray-300 shadow-md flex flex-col justify-between items-center p-4 hover:shadow-lg transition relative"
+            className="w-full max-w-[250px] min-h-[260px] bg-white border border-gray-300 shadow-md flex flex-col justify-between items-center p-4 hover:shadow-lg transition relative"
           >
             <button
               onClick={() => setSelectedBowl(bowl)}
-              className="text-lg font-medium text-center hover:underline"
+              className="text-base sm:text-lg font-medium text-center hover:underline"
             >
               {bowl.name}
             </button>
 
-            <button
-              onClick={() => handleAddToCart(bowl)}
-              className="mt-4 px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800"
-            >
-              Ajouter au panier
-            </button>
+            <div className="mt-4 relative w-full flex flex-col items-center">
+              {formatVisible === index ? (
+                <div
+                  className={clsx(
+                    "flex flex-col items-center gap-2 transition-opacity duration-300 ease-in-out opacity-0 bg-gray-100 border border-gray-300 p-3 rounded-xl w-full shadow-sm",
+                    formatVisible === index && "opacity-100"
+                  )}
+                >
+                  <button
+                    onClick={() => handleSizeSelect(index, "Petit")}
+                    className="px-3 py-1 bg-white rounded hover:bg-gray-100 text-sm w-full text-center"
+                  >
+                    🥣 Petit – 12.50$
+                  </button>
+                  <button
+                    onClick={() => handleSizeSelect(index, "Regular")}
+                    className="px-3 py-1 bg-white rounded hover:bg-gray-100 text-sm w-full text-center"
+                  >
+                    🥣 Regular – 17.50$
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => setFormatVisible(index)}
+                  className="px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800 transition"
+                >
+                  Ajouter au panier
+                </button>
+              )}
+            </div>
           </div>
         ))}
       </div>

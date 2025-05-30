@@ -5,22 +5,22 @@ import clsx from "clsx";
 export default function CommandSite({ cart, setCart }) {
   const bowls = [
     {
-      name: "Green Boost Bowl",
-      description: "Base spiruline, granola, mangues, fraises.",
+      name: "Vitae.",
+      description: "Base spiruline, granola, mangues, mûres.",
       macros: { calories: 314, glucides: 38.6, protéines: 7.6, lipides: 15.9, fibres: 8.1 },
     },
     {
-      name: "Purple Power Bowl",
-      description: "Base açai, granola, bleuets, bananes.",
+      name: "Aurea.",
+      description: "Base açai, granola, fraises, mûres.",
       macros: { calories: 364, glucides: 41.0, protéines: 6.8, lipides: 17.5, fibres: 9.2 },
     },
     {
-      name: "Goji Glow Bowl",
-      description: "Base banane, fraises, granola, baies de goji.",
+      name: "Solea.",
+      description: "Base baies de goji, granola, ananas, fraises.",
       macros: { calories: 332, glucides: 37.5, protéines: 6.9, lipides: 14.3, fibres: 8.6 },
     },
     {
-      name: "Coco Dream Bowl",
+      name: "Alba.",
       description: "Base coco, granola, ananas, mangues.",
       macros: { calories: 349, glucides: 39.8, protéines: 6.2, lipides: 16.7, fibres: 7.8 },
     },

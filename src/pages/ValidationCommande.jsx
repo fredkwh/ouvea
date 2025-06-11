@@ -47,11 +47,11 @@ export default function ValidationCommande({ cart, setCart }) {
 
       {error && <div className="text-red-600 mb-4 text-center">{error}</div>}
 
-      <div className="bg-white shadow-md rounded-lg p-4 mb-6">
-        <h2 className="text-lg font-semibold mb-3">🧾 Récapitulatif</h2>
+      <div className="bg-blanc-coco shadow-md rounded-lg p-4 mb-6">
+        <h2 className="text-lg font-semibold text-ocre-dore mb-3">🧾 Récapitulatif</h2>
         <table className="w-full text-sm">
           <thead>
-            <tr className="text-left border-b border-gray-300">
+            <tr className="text-left border-b border-ocre-dore">
               <th className="py-2">Bol</th>
               <th>Format</th>
               <th>Quantité</th>
@@ -61,7 +61,7 @@ export default function ValidationCommande({ cart, setCart }) {
           </thead>
           <tbody>
             {cart.map((item, index) => (
-              <tr key={index} className="border-b border-gray-200">
+              <tr key={index} className="border-b border-ocre-dore">
                 <td className="py-2">{item.name}</td>
                 <td>{item.size}</td>
                 <td>{item.quantity}</td>
@@ -76,15 +76,15 @@ export default function ValidationCommande({ cart, setCart }) {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-lg font-semibold mb-4">👤 Informations client</h2>
+      <form onSubmit={handleSubmit} className="bg-blanc-coco shadow-md rounded-lg p-4">
+        <h2 className="text-lg font-semibold text-ocre-dore mb-4">👤 Informations client</h2>
         <div className="mb-3">
           <label className="block mb-1 text-sm font-medium">Nom</label>
           <input
             type="text"
             value={nom}
             onChange={(e) => setNom(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-ocre-dore rounded px-3 py-2"
             required
           />
         </div>
@@ -94,7 +94,7 @@ export default function ValidationCommande({ cart, setCart }) {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-ocre-dore rounded px-3 py-2"
             required
           />
         </div>
@@ -104,13 +104,13 @@ export default function ValidationCommande({ cart, setCart }) {
             type="tel"
             value={telephone}
             onChange={(e) => setTelephone(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-ocre-dore rounded px-3 py-2"
             required
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition"
+          className="w-full bg-ocre-dore text-white py-2 rounded hover:bg-ocre-dore/90 transition"
         >
           Confirmer ma commande
         </button>

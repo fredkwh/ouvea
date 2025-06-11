@@ -30,7 +30,7 @@ export default function Login({ setUser }) {
 
   return (
     <div className="max-w-md mx-auto px-6 py-10 text-gray-800">
-      <h1 className="text-2xl font-bold mb-6 text-center text-amber-700">Connexion</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center text-ocre-dore">Connexion</h1>
       <form onSubmit={handleLogin} className="space-y-4">
         <input
           type="email"
@@ -38,7 +38,7 @@ export default function Login({ setUser }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 border border-ocre-dore rounded"
         />
         <input
           type="password"
@@ -46,24 +46,24 @@ export default function Login({ setUser }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 border border-ocre-dore rounded"
         />
         <button
           type="submit"
-          className="w-full bg-amber-600 text-white py-2 rounded hover:bg-amber-700 transition"
+          className="w-full bg-ocre-dore text-white py-2 rounded hover:bg-ocre-dore/90 transition"
         >
           Se connecter
         </button>
       </form>
       {error && <p className="mt-4 text-red-600 text-center">{error}</p>}
       <p className="mt-6 text-center text-sm">
-        <Link to="/mot-de-passe-oublie" className="text-blue-600 hover:underline">
+        <Link to="/mot-de-passe-oublie" className="text-ocre-dore hover:underline">
           Mot de passe oublié ?
         </Link>
       </p>
       <p className="mt-2 text-center text-sm">
         Pas encore de compte ?{" "}
-        <Link to="/register" className="text-blue-600 hover:underline">
+        <Link to="/register" className="text-ocre-dore hover:underline">
           Créer un compte
         </Link>
       </p>

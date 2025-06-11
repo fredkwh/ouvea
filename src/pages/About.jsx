@@ -1,11 +1,12 @@
+
 export default function About() {
   return (
     <div className="p-8 max-w-3xl mx-auto text-gray-800 leading-relaxed">
-      <h1 className="text-3xl font-bold mb-6 text-center text-amber-700">À propos</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center text-ocre-dore">À propos</h1>
 
       <p className="mb-4">
-        Bowl & the Gang est né d’un amour pour les choses simples, naturelles et bonnes
-        pour le corps. Chaque bol est pensé comme une alliance de saveurs, de couleurs, et de superaliments
+        Ouvéa est né d’un amour pour les choses simples, naturelles et bonnes pour le corps.
+        Chaque bol est pensé comme une alliance de saveurs, de couleurs, et de superaliments
         pour nourrir autant le palais que l’esprit.
       </p>
 
@@ -20,7 +21,7 @@ export default function About() {
         les studios de pilates, où performance rime avec plaisir.
       </p>
 
-      <p className="mt-6 italic text-center">
+      <p className="mt-6 italic text-center text-ocre-dore">
         🌴 Un bol à la fois, reconnectons-nous au goût du vrai.
       </p>
     </div>

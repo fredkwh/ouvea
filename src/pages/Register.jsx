@@ -36,7 +36,7 @@ export default function Register({ setUser }) {
 
   return (
     <div className="max-w-md mx-auto px-6 py-10 text-gray-800">
-      <h1 className="text-2xl font-bold mb-6 text-center">Créer un compte</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center text-ocre-dore">Créer un compte</h1>
       <form onSubmit={handleRegister} className="space-y-4">
         <input
           type="text"
@@ -44,14 +44,14 @@ export default function Register({ setUser }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 border border-ocre-dore rounded"
         />
         <input
           type="tel"
           placeholder="Téléphone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 border border-ocre-dore rounded"
         />
         <input
           type="email"
@@ -59,7 +59,7 @@ export default function Register({ setUser }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 border border-ocre-dore rounded"
         />
         <input
           type="password"
@@ -67,11 +67,11 @@ export default function Register({ setUser }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 border border-ocre-dore rounded"
         />
         <button
           type="submit"
-          className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition"
+          className="w-full bg-ocre-dore text-white py-2 rounded hover:bg-ocre-dore/90 transition"
         >
           Créer mon compte
         </button>

@@ -1,18 +1,23 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBjrvMDlWp6ZHEKcYLd0BJOwt1tzUO1WTY",
-  authDomain: "bowlandthegang-34682.firebaseapp.com",
-  projectId: "bowlandthegang-34682",
-  storageBucket: "bowlandthegang-34682.appspot.com",
-  messagingSenderId: "693162546434",
-  appId: "1:693162546434:web:f71ad9aecbac1ea1a8de1b",
-  measurementId: "G-7PZWJQ2181"
+  apiKey: "AIzaSyDSUzmWMvGnMOz5UqNo4eFkWkPvfTKAS7w",
+  authDomain: "ouvea-c1337.firebaseapp.com",
+  projectId: "ouvea-c1337",
+  storageBucket: "ouvea-c1337.firebasestorage.app",
+  messagingSenderId: "996502648465",
+  appId: "1:996502648465:web:a688624612fc020de03130",
+  measurementId: "G-78LW0RBGX6"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const analytics = getAnalytics(app);
 
-export { app, db };
+const db = getFirestore(app);
+export { db };

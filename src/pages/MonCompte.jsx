@@ -41,29 +41,29 @@ export default function MonCompte() {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-[#fffbea] flex items-center justify-center">
+      <div className="min-h-screen bg-sable-chaud flex items-center justify-center">
         <p className="text-gray-700">Veuillez vous connecter pour voir votre compte.</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#fffbea] p-4 flex flex-col sm:flex-row">
+    <div className="min-h-screen bg-sable-chaud p-4 flex flex-col sm:flex-row">
       {/* Sidebar */}
       <div className="sm:w-1/4 mb-4 sm:mb-0 sm:mr-4">
         <div className="flex flex-col space-y-2">
           <button
             onClick={() => setActiveTab("infos")}
-            className={`w-full px-3 py-2 rounded hover:bg-gray-100 text-left ${
-              activeTab === "infos" ? "bg-gray-200 font-semibold" : ""
+            className={`w-full px-3 py-2 rounded hover:bg-sable-chaud/70 text-left ${
+              activeTab === "infos" ? "bg-sable-chaud font-semibold" : ""
             }`}
           >
             🧍 Mes informations
           </button>
           <button
             onClick={() => setActiveTab("commandes")}
-            className={`w-full px-3 py-2 rounded hover:bg-gray-100 text-left ${
-              activeTab === "commandes" ? "bg-gray-200 font-semibold" : ""
+            className={`w-full px-3 py-2 rounded hover:bg-sable-chaud/70 text-left ${
+              activeTab === "commandes" ? "bg-sable-chaud font-semibold" : ""
             }`}
           >
             📦 Mes commandes
@@ -72,7 +72,7 @@ export default function MonCompte() {
       </div>
 
       {/* Contenu */}
-      <div className="sm:w-3/4 bg-white rounded shadow p-6">
+      <div className="sm:w-3/4 bg-blanc-coco rounded shadow p-6">
         {activeTab === "infos" && (
           <>
             <h1 className="text-2xl font-bold mb-4">Mon compte</h1>
@@ -85,7 +85,7 @@ export default function MonCompte() {
                 <p className="mb-4"><strong>Téléphone :</strong> {phoneNumber || "(non défini)"}</p>
                 <button
                   onClick={() => setEditMode(true)}
-                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                  className="px-4 py-2 bg-ocre-dore text-white rounded hover:bg-ocre-dore/90"
                 >
                   Modifier
                 </button>
@@ -112,13 +112,13 @@ export default function MonCompte() {
                 </div>
                 <button
                   onClick={handleUpdate}
-                  className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 mr-2"
+                  className="px-4 py-2 bg-ocre-dore text-white rounded hover:bg-ocre-dore/90 mr-2"
                 >
                   Sauvegarder
                 </button>
                 <button
                   onClick={() => setEditMode(false)}
-                  className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500"
+                  className="px-4 py-2 bg-noir-cacao-doux text-white rounded hover:bg-noir-cacao-doux/90"
                 >
                   Annuler
                 </button>

@@ -33,12 +33,12 @@ const Cart = ({ cart = [], setCart }) => {
             {cart.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col sm:flex-row items-center sm:justify-between bg-white shadow-md rounded-2xl p-4"
+                className="flex flex-col sm:flex-row items-center sm:justify-between bg-blanc-coco shadow-md rounded-2xl p-4"
               >
                 <div className="flex items-center gap-4 w-full sm:w-auto">
                   <img src={item.image || '/placeholder.png'} alt={item.name} className="w-24 h-24 object-cover rounded-xl" />
                   <div className="text-center sm:text-left">
-                    <h3 className="text-lg font-semibold">{item.name}</h3>
+                    <h3 className="text-lg font-semibold text-ocre-dore">{item.name}</h3>
                     <p className="text-sm text-gray-500">Format : {item.size}</p>
                     <p className="text-sm font-medium">Prix unitaire : {item.price.toFixed(2)} $</p>
                     <div className="mt-2 flex items-center gap-2 justify-center sm:justify-start">
@@ -58,7 +58,7 @@ const Cart = ({ cart = [], setCart }) => {
 
                 <button
                   onClick={() => handleRemove(index)}
-                  className="mt-3 sm:mt-0 bg-red-500 text-white px-4 py-2 rounded-xl hover:bg-red-600 transition"
+                  className="mt-3 sm:mt-0 bg-ocre-dore text-white px-4 py-2 rounded-xl hover:bg-ocre-dore/90 transition"
                 >
                   Supprimer
                 </button>
@@ -67,12 +67,12 @@ const Cart = ({ cart = [], setCart }) => {
           </div>
 
           <div className="text-right mb-6">
-            <p className="text-lg font-semibold">Total : {total.toFixed(2)} $</p>
+            <p className="text-lg font-semibold text-ocre-dore">Total : {total.toFixed(2)} $</p>
           </div>
 
           <Link
             to="/validation"
-            className="block text-center bg-black text-white py-3 rounded-xl font-semibold hover:bg-gray-800 transition"
+            className="block text-center bg-ocre-dore text-white py-3 rounded-xl font-semibold hover:bg-ocre-dore/90 transition"
           >
             Valider ma commande
           </Link>

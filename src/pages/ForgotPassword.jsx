@@ -32,8 +32,8 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-[#fefae0] px-4">
-      <h1 className="text-2xl font-bold text-[#c75c00] mb-6">Réinitialiser mon mot de passe</h1>
+    <div className="min-h-screen flex flex-col justify-center items-center bg-sable-chaud px-4">
+      <h1 className="text-2xl font-bold text-ocre-dore mb-6">Réinitialiser mon mot de passe</h1>
       <form onSubmit={handleReset} className="w-full max-w-md">
         <input
           type="email"
@@ -41,11 +41,11 @@ export default function ForgotPassword() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full px-4 py-2 mb-4 border border-gray-300 rounded text-lg"
+          className="w-full px-4 py-2 mb-4 border border-ocre-dore rounded text-lg"
         />
         <button
           type="submit"
-          className="w-full bg-[#d97706] hover:bg-[#b45309] text-white font-semibold py-2 px-4 rounded"
+          className="w-full bg-ocre-dore hover:bg-ocre-dore/90 text-white font-semibold py-2 px-4 rounded"
         >
           Envoyer le lien de réinitialisation
         </button>

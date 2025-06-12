@@ -18,7 +18,7 @@ export default function CommandSite({ cart, setCart }) {
     },
     {
       name: "Solea",
-      image: "/public/img/solea.png",
+      image: "/img/solea.png",
       description: "Base baies de goji, granola maison, ananas, fraises, menthe",
       macros: { calories: 322, glucides: 36.9, protéines: 8.2, lipides: 16.1, fibres: 8.4 },
     },

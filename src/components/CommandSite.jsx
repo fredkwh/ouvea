@@ -76,13 +76,13 @@ export default function CommandSite({ cart, setCart }) {
                     onClick={() => handleSizeSelect(index, "Petit")}
                     className="px-3 py-2 bg-white rounded hover:bg-ocre-dore/20 text-sm w-full text-center border"
                   >
-                    🥣 Petit – 12.50$
+                    Petit – 12.50$
                   </button>
                   <button
                     onClick={() => handleSizeSelect(index, "Regular")}
                     className="px-3 py-2 bg-white rounded hover:bg-ocre-dore/20 text-sm w-full text-center border"
                   >
-                    🥣 Regular – 17.50$
+                    Regular – 17.50$
                   </button>
                 </div>
               ) : (

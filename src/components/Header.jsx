@@ -1,14 +1,13 @@
-
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaUser } from "react-icons/fa";
 
 const logo = "/v5.png";
 
 function Header() {
   const { cart } = useContext(CartContext);
-  const cartCount = cart.length;
+  const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <header className="bg-blanc-coco py-4 shadow-md">
@@ -16,10 +15,10 @@ function Header() {
         {/* Partie gauche */}
         <div className="flex space-x-6 items-center">
           <Link to="/" className="font-semibold text-noir-cacao-doux hover:underline">
-            Menu
+            Nos Bols
           </Link>
-          <Link to="/notre-histoire" className="font-semibold text-noir-cacao-doux hover:underline">
-            Notre histoire
+          <Link to="/les-bienfaits" className="font-semibold text-noir-cacao-doux hover:underline">
+            Les bienfaits
           </Link>
         </div>
 
@@ -30,11 +29,14 @@ function Header() {
 
         {/* Partie droite */}
         <div className="flex items-center space-x-6">
+          <Link to="/notre-histoire" className="font-semibold text-noir-cacao-doux hover:underline">
+            Notre histoire
+          </Link>
           <Link to="/contact" className="font-semibold text-noir-cacao-doux hover:underline">
             Contact
           </Link>
-          <Link to="/login" className="border border-ocre-dore px-4 py-1 rounded-full text-noir-cacao-doux font-semibold hover:bg-ocre-dore/20 transition">
-            Connexion
+          <Link to="/login" className="relative text-noir-cacao-doux">
+            <FaUser className="text-xl" />
           </Link>
           <Link to="/panier" className="relative text-noir-cacao-doux">
             <FaShoppingCart className="text-xl" />

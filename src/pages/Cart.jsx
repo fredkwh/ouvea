@@ -2,7 +2,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Cart = ({ cart = [], setCart }) => {
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+
+const Cart = () => {
+  const { cart, setCart, removeFromCart } = useContext(CartContext);
   const handleRemove = (indexToRemove) => {
     const updated = cart.filter((_, i) => i !== indexToRemove);
     setCart(updated);

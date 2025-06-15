@@ -1,8 +1,9 @@
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import clsx from "clsx";
 
-export default function CommandSite({ cart, setCart }) {
+export default function NosBols() {
   const bowls = [
     {
       name: "Vitae",
@@ -30,6 +31,7 @@ export default function CommandSite({ cart, setCart }) {
     },
   ];
 
+  const { addToCart } = useContext(CartContext);
   const [selectedBowl, setSelectedBowl] = useState(null);
   const [formatVisible, setFormatVisible] = useState(null);
   const [selectedSizes, setSelectedSizes] = useState({});
@@ -40,7 +42,7 @@ export default function CommandSite({ cart, setCart }) {
     setSelectedSizes(updatedSizes);
     setFormatVisible(null);
     const bowl = bowls[index];
-    setCart((prev) => [...prev, { ...bowl, size, price, quantity: 1 }]);
+    addToCart({ ...bowl, size, price });
   };
 
   return (

@@ -29,9 +29,9 @@ export default function Login({ setUser }) {
   };
 
   return (
-    <div className="max-w-md mx-auto px-6 py-10 text-gray-800">
-      <h1 className="text-2xl font-bold mb-6 text-center text-ocre-dore">Connexion</h1>
-      <form onSubmit={handleLogin} className="space-y-4">
+    <div className="max-w-6xl mx-auto px-4 py-10 text-noir-cacao-doux">
+      <h1 className="text-2xl font-serif text-center mb-8 text-ocre-dore">Connexion</h1>
+      <form onSubmit={handleLogin} className="space-y-4 max-w-md mx-auto">
         <input
           type="email"
           placeholder="Adresse email"

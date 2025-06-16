@@ -11,9 +11,9 @@ function Header() {
 
   return (
     <header className="bg-blanc-coco py-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center px-4">
+      <div className="max-w-5xl mx-auto px-4 flex items-center justify-between relative">
         {/* Partie gauche */}
-        <div className="flex space-x-6 items-center">
+        <div className="w-1/3 flex justify-center space-x-6 items-center">
           <Link to="/" className="font-semibold text-noir-cacao-doux hover:underline">
             Nos Bols
           </Link>
@@ -22,13 +22,15 @@ function Header() {
           </Link>
         </div>
 
-        {/* Logo au centre */}
-        <div className="flex justify-center">
-          <img src={logo} alt="Ouvéa" className="h-10" />
+        {/* Logo centré absolument */}
+        <div className="absolute left-1/2 transform -translate-x-1/2">
+          <Link to="/">
+            <img src={logo} alt="Ouvéa" className="h-10" />
+          </Link>
         </div>
 
         {/* Partie droite */}
-        <div className="flex items-center space-x-6">
+        <div className="w-1/3 flex justify-center items-center space-x-6">
           <Link to="/notre-histoire" className="font-semibold text-noir-cacao-doux hover:underline">
             Notre histoire
           </Link>

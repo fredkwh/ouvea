@@ -1,12 +1,11 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 const Cart = () => {
   const { cart, setCart, removeFromCart } = useContext(CartContext);
+
   const handleRemove = (indexToRemove) => {
     const updated = cart.filter((_, i) => i !== indexToRemove);
     setCart(updated);
@@ -26,8 +25,8 @@ const Cart = () => {
   );
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-6">
-      <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">Votre panier</h2>
+    <div className="max-w-6xl mx-auto px-4 py-10 text-noir-cacao-doux">
+      <h2 className="text-2xl font-serif text-center mb-8 text-ocre-dore">Votre panier</h2>
 
       {cart.length === 0 ? (
         <p className="text-center text-gray-600">Votre panier est vide.</p>

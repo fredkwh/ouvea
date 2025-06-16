@@ -1,124 +1,131 @@
-
 import { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import clsx from "clsx";
 
 export default function NosBols() {
   const bowls = [
     {
       name: "Vitae",
       image: "/img/vitae.png",
-      description: "Base spiruline, granola maison, mangues, mûres",
-      macros: { calories: 314, glucides: 38.6, protéines: 7.6, lipides: 15.9, fibres: 8.1 },
+      shortDescription: "Un bol vibrant pour les matins actifs",
+      longDescription: "Un bol vibrant pensé pour les matins actifs. Spiruline, mangue, fraise — une dose végétale d’énergie pure pour bien démarrer la journée.",
+      tag: "Énergisant"
     },
     {
       name: "Aurea",
       image: "/img/aurea.png",
-      description: "Base açai, granola maison, fraises, mûres",
-      macros: { calories: 301, glucides: 35.2, protéines: 6.4, lipides: 14.7, fibres: 7.8 },
+      shortDescription: "Fruits rouges & açai pour une pause fraîche",
+      longDescription: "Riche en antioxydants, ce bol à base d’açai mêle fruits rouges et granola maison pour une pause fraîcheur intense et régénérante.",
+      tag: "Antioxydant"
     },
     {
       name: "Solea",
       image: "/img/solea.png",
-      description: "Base baies de goji, granola maison, ananas, fraises, menthe",
-      macros: { calories: 322, glucides: 36.9, protéines: 8.2, lipides: 16.1, fibres: 8.4 },
+      shortDescription: "Fruits tropicaux & baies de goji",
+      longDescription: "Un bol tropical solaire, aux notes d’ananas, de fraises et de baies de goji. Pour faire entrer l’été dans ton quotidien, à la cuillère.",
+      tag: "Tropical"
     },
     {
       name: "Alba",
       image: "/img/alba.png",
-      description: "Base coco, granola maison, ananas, mangues",
-      macros: { calories: 298, glucides: 33.5, protéines: 6.9, lipides: 13.8, fibres: 7.2 },
+      shortDescription: "Coco, mangue & ananas tout en douceur",
+      longDescription: "La douceur du lait de coco mêlée à la mangue et à l’ananas. Crémeux, rond, réconfortant : un bol tout en apaisement.",
+      tag: "Douceur"
     },
+
   ];
 
   const { addToCart } = useContext(CartContext);
   const [selectedBowl, setSelectedBowl] = useState(null);
-  const [formatVisible, setFormatVisible] = useState(null);
-  const [selectedSizes, setSelectedSizes] = useState({});
+  const [selectedSize, setSelectedSize] = useState("Regular");
 
-  const handleSizeSelect = (index, size) => {
-    const price = size === "Petit" ? 12.5 : 17.5;
-    const updatedSizes = { ...selectedSizes, [index]: size };
-    setSelectedSizes(updatedSizes);
-    setFormatVisible(null);
-    const bowl = bowls[index];
-    addToCart({ ...bowl, size, price });
+  const handleAddToCart = () => {
+    const price = selectedSize === "Petit" ? 12.5 : 17.5;
+    addToCart({ ...selectedBowl, size: selectedSize, price });
+    setSelectedBowl(null);
+    setSelectedSize("Regular");
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10 text-noir-cacao-doux">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 place-items-center">
+    <div className="max-w-6xl mx-auto px-4 py-10 text-noir-cacao-doux">
+      <h2 className="text-2xl font-serif text-center text-center mb-8 text-ocre-dore">
+        Nos bols signatures
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 place-items-center">
         {bowls.map((bowl, index) => (
           <div
             key={index}
-            className="w-full max-w-[280px] min-h-[280px] bg-blanc-coco border border-ocre-dore shadow-md flex flex-col items-center p-4"
+            role="button"
+            onClick={() => setSelectedBowl(bowl)}
+            tabIndex={0}
+            className="cursor-pointer w-full max-w-[280px] bg-blanc-coco border border-ocre-dore shadow-md hover:shadow-xl active:scale-[0.98] hover:-translate-y-1 hover:ring-1 hover:ring-ocre-dore/30 transition-all duration-300 transform rounded-xl p-4 flex flex-col items-center focus:outline-none focus:ring-2 focus:ring-ocre-dore animate-fade-pop"
           >
             <img
               src={bowl.image}
               alt={bowl.name}
               className="h-32 w-auto object-contain mx-auto mb-4 rounded-xl"
             />
-            <button
-              onClick={() => setSelectedBowl(bowl)}
-              className="text-lg sm:text-xl font-semibold text-noir-cacao-doux text-center hover:underline"
-            >
+            <p className="text-base text-noir-cacao-doux text-gray-600 mt-1 text-center text-center">{bowl.shortDescription}</p>
+            <div className="text-xl font-serif text-noir-cacao-doux text-center text-center mt-1">
               {bowl.name}
-            </button>
-
-
-            <div className="mt-6 relative w-full flex flex-col items-center">
-              {formatVisible === index ? (
-                <div
-                  className={clsx(
-                    "flex flex-col items-center gap-2 transition-opacity duration-300 ease-in-out opacity-0 bg-sable-chaud border border-ocre-dore p-4 rounded-xl w-full shadow-sm",
-                    formatVisible === index && "opacity-100"
-                  )}
-                >
-                  <button
-                    onClick={() => handleSizeSelect(index, "Petit")}
-                    className="px-3 py-2 bg-white rounded hover:bg-ocre-dore/20 text-sm w-full text-center border"
-                  >
-                    Petit – 12.50$
-                  </button>
-                  <button
-                    onClick={() => handleSizeSelect(index, "Regular")}
-                    className="px-3 py-2 bg-white rounded hover:bg-ocre-dore/20 text-sm w-full text-center border"
-                  >
-                    Regular – 17.50$
-                  </button>
-                </div>
-              ) : (
-                <button
-                  onClick={() => setFormatVisible(index)}
-                  className="px-4 py-2 bg-ocre-dore text-white text-sm rounded hover:bg-ocre-dore/90 transition"
-                >
-                  Ajouter au panier
-                </button>
-              )}
             </div>
+            <p className="text-base text-noir-cacao-doux text-gray-500 mt-1">à partir de 12.50$</p>
+            <span className="text-xs mt-2 px-2 py-1 bg-sable-chaud text-noir-cacao-doux font-medium rounded-full shadow-sm">
+              {bowl.tag}
+            </span>
+            <button className="mt-4 px-4 py-2 bg-ocre-dore text-white text-base text-noir-cacao-doux rounded-xl hover:bg-ocre-dore-fonce transition-colors duration-200">
+              Ajouter au panier
+            </button>
           </div>
         ))}
       </div>
 
       {selectedBowl && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-          <div className="bg-blanc-coco rounded-xl shadow-xl p-6 w-[90%] max-w-md text-center relative">
+        <div className="fixed inset-0 bg-noir-cacao-doux/60 backdrop-blur-sm flex items-center justify-center z-50 transition-opacity duration-300">
+          <div className="bg-blanc-coco rounded-xl shadow-xl p-6 w-[90%] max-w-md text-center text-center relative animate-fade-pop">
             <button
               onClick={() => setSelectedBowl(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-noir-cacao-doux text-xl"
             >
               &times;
             </button>
-            <h2 className="text-2xl font-bold text-ocre-dore mb-2">{selectedBowl.name}</h2>
-            <p className="mb-4">{selectedBowl.description}</p>
-            <h3 className="text-lg font-semibold text-ocre-dore mb-2">Valeurs nutritionnelles</h3>
-            <ul className="text-sm text-left mx-auto w-fit space-y-1">
-              <li><strong>Calories :</strong> {selectedBowl.macros.calories} kcal</li>
-              <li><strong>Glucides :</strong> {selectedBowl.macros.glucides} g</li>
-              <li><strong>Protéines :</strong> {selectedBowl.macros.protéines} g</li>
-              <li><strong>Lipides :</strong> {selectedBowl.macros.lipides} g</li>
-              <li><strong>Fibres :</strong> {selectedBowl.macros.fibres} g</li>
-            </ul>
+            <h2 className="text-3xl font-serif tracking-tight font-bold text-ocre-dore mb-2">
+              {selectedBowl.name}
+            </h2>
+            <p className="mb-4 text-base leading-relaxed text-noir-cacao-doux">
+              {selectedBowl.longDescription}
+            </p>
+
+            <hr className="my-4 border-t border-sable-chaud" />
+
+            <h3 className="text-base text-noir-cacao-doux font-bold mt-4 mb-2">Choisir une taille :</h3>
+            <div className="flex gap-4 justify-center mb-2">
+              {["Petit", "Regular"].map((size) => (
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={
+  selectedSize === size
+    ? "px-4 py-2 rounded-full border text-base text-noir-cacao-doux font-medium shadow-sm bg-ocre-dore text-white border-ocre-dore shadow"
+    : "px-4 py-2 rounded-full border text-base text-noir-cacao-doux font-medium shadow-sm bg-white text-noir-cacao-doux hover:bg-ocre-dore/10"
+}
+>
+  {size === "Petit" ? "Petit – 12.50$" : "Regular – 17.50$"}
+</button>
+))}
+
+            </div>
+
+            <p className="text-base text-noir-cacao-doux text-gray-500 mt-2">
+              Taille sélectionnée : <span className="font-medium text-ocre-dore">{selectedSize}</span>
+            </p>
+
+            <button
+              onClick={handleAddToCart}
+              className="mt-6 bg-ocre-dore text-white rounded px-4 py-2 hover:bg-ocre-dore-fonce transition"
+            >
+              Ajouter au panier
+            </button>
           </div>
         </div>
       )}

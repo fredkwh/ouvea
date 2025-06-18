@@ -11,10 +11,10 @@ export default function LesBienfaitsCarousel() {
       description:
         "Une base verte revitalisante à la spiruline, riche en chlorophylle, fer biodisponible et phycocyanine. Ce bol soutient l’oxygénation cellulaire, la récupération et la clarté mentale, tout en protégeant les cellules du stress oxydatif. Une recharge naturelle pour les matins où tout compte.",
       macros: {
-        calories: 314,
-        glucides: 38.6,
-        protéines: 7.6,
-        lipides: 15.9,
+        calories: 315,
+        glucides: 32.3,
+        protéines: 7.4,
+        lipides: 19.0,
         fibres: 8.1,
       },
     },
@@ -24,10 +24,10 @@ export default function LesBienfaitsCarousel() {
       description:
         "Un mélange élégant de fruits rouges, d’açai et de mûres, concentré en anthocyanines, oméga-9 et vitamine C. Ce bol agit comme un véritable bouclier antioxydant, régulant le stress oxydatif, soutenant l’humeur et la peau. Idéal pour recharger ton éclat intérieur.",
       macros: {
-        calories: 301,
-        glucides: 35.2,
-        protéines: 6.4,
-        lipides: 14.7,
+        calories: 306,
+        glucides: 30.4,
+        protéines: 3.7,
+        lipides: 20.0,
         fibres: 7.8,
       },
     },
@@ -37,10 +37,10 @@ export default function LesBienfaitsCarousel() {
       description:
         "Un bol tropical solaire aux notes d’ananas, de fraises et de baies de goji. Riche en vitamines C et A, enzymes digestives et oligoéléments toniques, il soutient l’immunité, la digestion et l’éclat de la peau. En bonus : ses caroténoïdes naturels favorisent aussi la santé visuelle.",
       macros: {
-        calories: 319,
-        glucides: 36.7,
-        protéines: 7.1,
-        lipides: 14.2,
+        calories: 306,
+        glucides: 32.6,
+        protéines: 4.6,
+        lipides: 18.7,
         fibres: 8.4,
       },
     },
@@ -50,10 +50,10 @@ export default function LesBienfaitsCarousel() {
       description:
         "La douceur du lait de coco associée à la mangue et l’ananas, pour un bol onctueux et apaisant. Source d’acides gras essentiels, d’enzymes digestives et de magnésium naturel, Alba soutient le système nerveux, la digestion et favorise un équilibre intérieur durable à faible index glycémique.",
       macros: {
-        calories: 312,
-        glucides: 34.9,
-        protéines: 6.9,
-        lipides: 15.3,
+        calories: 330,
+        glucides: 32.8,
+        protéines: 3.7,
+        lipides: 21.8,
         fibres: 7.9,
       },
     },

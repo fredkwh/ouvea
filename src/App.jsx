@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 
 import Cart from "./pages/Cart";
 import Confirmation from "./pages/Confirmation";
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <Router>
-      <Header cart={cart} user={user} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<NosBols cart={cart} setCart={setCart} />} />
         <Route path="/panier" element={<Cart cart={cart} setCart={setCart} />} />

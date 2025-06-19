@@ -1,3 +1,4 @@
+
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -59,6 +60,7 @@ export default function LesBienfaitsCarousel() {
     },
   ];
 
+  
   const settings = {
     dots: true,
     infinite: true,
@@ -67,7 +69,10 @@ export default function LesBienfaitsCarousel() {
     slidesToScroll: 1,
     arrows: true,
     swipe: true,
+    centerMode: true,
+    centerPadding: "12%",
   };
+
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 text-noir-cacao-doux">
@@ -91,12 +96,21 @@ export default function LesBienfaitsCarousel() {
             <p className="text-base text-noir-cacao-doux leading-relaxed px-4 mb-4">
               {bowl.description}
             </p>
-            <div className="text-sm text-noir-cacao-doux space-y-1">
-              <p><strong>Calories :</strong> {bowl.macros.calories} kcal</p>
-              <p><strong>Glucides :</strong> {bowl.macros.glucides} g</p>
-              <p><strong>Protéines :</strong> {bowl.macros.protéines} g</p>
-              <p><strong>Lipides :</strong> {bowl.macros.lipides} g</p>
-              <p><strong>Fibres :</strong> {bowl.macros.fibres} g</p>
+            <div className="text-sm text-noir-cacao-doux space-y-1 italic mt-2">
+              <p>
+                Composé de fibres, de bons gras végétaux et de micronutriments essentiels,
+                ce bol soutient ton corps sans surcharge : naturel, dense et juste.
+              </p>
+              <details className="mt-2 cursor-pointer">
+                <summary className="underline text-ocre-dore">Voir les valeurs nutritionnelles</summary>
+                <div className="mt-1 space-y-1 text-xs">
+                  <p><strong>Calories :</strong> {bowl.macros.calories} kcal</p>
+                  <p><strong>Glucides :</strong> {bowl.macros.glucides} g</p>
+                  <p><strong>Protéines :</strong> {bowl.macros.protéines} g</p>
+                  <p><strong>Lipides :</strong> {bowl.macros.lipides} g</p>
+                  <p><strong>Fibres :</strong> {bowl.macros.fibres} g</p>
+                </div>
+              </details>
             </div>
           </div>
         ))}

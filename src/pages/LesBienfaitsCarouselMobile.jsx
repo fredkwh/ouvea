@@ -1,4 +1,3 @@
-
 import Slider from "react-slick";
 import { data } from "../data/data";
 import "slick-carousel/slick/slick.css";
@@ -14,7 +13,10 @@ export default function LesBienfaitsCarouselMobile() {
   };
 
   return (
-    <div className="py-6 px-4">
+    <div className="py-10 px-4 text-noir-cacao-doux">
+      <h2 className="text-2xl font-serif text-center mb-6 text-ocre-dore">
+        Les bienfaits de nos bols
+      </h2>
       <Slider {...settings}>
         {data.map((item, index) => (
           <div key={index} className="px-1">

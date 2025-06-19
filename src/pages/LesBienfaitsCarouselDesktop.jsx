@@ -1,4 +1,3 @@
-
 import Slider from "react-slick";
 import { data } from "../data/data";
 import "slick-carousel/slick/slick.css";
@@ -16,7 +15,10 @@ export default function LesBienfaitsCarouselDesktop() {
   };
 
   return (
-    <div className="py-8 px-4 max-w-6xl mx-auto">
+    <div className="py-10 px-4 max-w-6xl mx-auto text-noir-cacao-doux">
+      <h2 className="text-2xl font-serif text-center mb-8 text-ocre-dore">
+        Les bienfaits de nos bols
+      </h2>
       <Slider {...settings}>
         {data.map((item, index) => (
           <div key={index} className="px-2">
